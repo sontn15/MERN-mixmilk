@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Slider from './components/Slider';
 import Footer from './components/Footer';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <main>
         <Slider />
         <Container>
-          <h1>Mixmilk</h1>
+          <ProductScreen />
         </Container>
       </main>
       <Footer />
