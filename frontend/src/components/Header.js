@@ -1,4 +1,5 @@
 import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 const Header = () => {
@@ -6,7 +7,9 @@ const Header = () => {
     <header>
       <Navbar bg='primary' expand='lg' variant='dark' collapseOnSelect>
         <Container>
-          <Navbar.Brand href='/'>Mixmilk</Navbar.Brand>
+          <LinkContainer to='/'>
+            <Navbar.Brand>Mixmilk</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='mr-auto'>
@@ -29,12 +32,16 @@ const Header = () => {
               <Nav.Link href='/product'>Liên hệ</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href='/cart'>
-                <i className='fas fa-shopping-cart'></i> Giỏ hàng
-              </Nav.Link>
-              <Nav.Link href='/login'>
-                <i className='fas fa-user'></i> Đăng nhập
-              </Nav.Link>
+              <LinkContainer to='/cart'>
+                <Nav.Link>
+                  <i className='fas fa-shopping-cart'></i> Giỏ hàng
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/login'>
+                <Nav.Link>
+                  <i className='fas fa-user'></i> Đăng nhập
+                </Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
