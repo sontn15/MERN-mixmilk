@@ -6,7 +6,7 @@ const Certificate = () => {
     <Container className='certificate'>
       <h1>Chứng nhận sản xuất sản phẩm</h1>
       <Row className='content'>
-        <Col className='col-sm-4'>
+        <Col lg={4} md={4} sm={12} className=' mb-5'>
           <Card className='border-info'>
             <Card.Img src='./images/mixmilk1.jpg' variant='top' />
             <Card.Body>
@@ -20,7 +20,7 @@ const Certificate = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col className='col-sm-4'>
+        <Col lg={4} md={4} sm={12} className=' mb-5'>
           <Card className='border-info'>
             <Card.Img src='./images/mixmilk1.jpg' variant='top' />
             <Card.Body>
@@ -34,7 +34,7 @@ const Certificate = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col className='col-sm-4'>
+        <Col lg={4} md={4} sm={12}>
           <Card className='border-info'>
             <Card.Img src='./images/mixmilk1.jpg' variant='top' />
             <Card.Body>
