@@ -1,0 +1,14 @@
+{
+  "name": "mixmilk2",
+  "version": "1.0.0",
+  "description": "Mixmilk Utt",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "author": "HoangPham",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
