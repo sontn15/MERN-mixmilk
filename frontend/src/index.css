@@ -14,3 +14,20 @@ main {
     display: none;
   }
 }
+
+/* CERTIFICATE */
+.certificate {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.certificate img {
+  display: inline-block;
+  align-self: center;
+  width: 50%;
+  margin-top: -35px;
+}
+
+.certificate .content {
+  padding-top: 70px;
+}
