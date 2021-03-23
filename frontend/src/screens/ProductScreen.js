@@ -1,21 +1,8 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import Product from '../components/Product';
-import products from '../products';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const ProductScreen = () => {
-  return (
-    <>
-      <h1>Sản phẩm mới nhất</h1>
-      <Row>
-        {products.map((product) => (
-          <Col sm={12} md={6} lg={4} xl={3}>
-            <Product product={product} />
-          </Col>
-        ))}
-      </Row>
-    </>
-  );
+  return <>Detail Product</>;
 };
 
 export default ProductScreen;
