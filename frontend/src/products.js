@@ -5,9 +5,9 @@ const products = [
     name: 'CURCUMIX (DẠNG HỘP CÓ GÓI NHỎ ĐỂ PHA)',
     image: '/images/curcumix.jpg',
     description: {
-      'Thành phần':
+      thanhPhan:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
-      'Công dụng':
+      congDung:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
     },
     brand: 'Vesta',
@@ -21,9 +21,9 @@ const products = [
     name: 'GOLDEN MILK (TÚI VỈ)',
     image: '/images/goldenmilk.jpg',
     description: {
-      'Thành phần':
+      thanhPhan:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
-      'Công dụng':
+      congDung:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
     },
     brand: 'Vesta',
@@ -37,9 +37,9 @@ const products = [
     name: "S'COFFEE CAFE ĐÔNG TRÙNG HẠ THẢO",
     image: '/images/scoffee.jpg',
     description: {
-      'Thành phần':
+      thanhPhan:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
-      'Công dụng':
+      congDung:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
     },
     brand: 'Vesta',
@@ -53,9 +53,9 @@ const products = [
     name: 'VIÊN SỮA MIXMILK HƯƠNG CHOCOLATE',
     image: '/images/mixmilk1.jpg',
     description: {
-      'Thành phần':
+      thanhPhan:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
-      'Công dụng':
+      congDung:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
     },
     brand: 'Vesta',
@@ -69,9 +69,9 @@ const products = [
     name: 'VIÊN SỮA MIXMILK HƯƠNG DÂU',
     image: '/images/mixmilk3.jpg',
     description: {
-      'Thành phần':
+      thanhPhan:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
-      'Công dụng':
+      congDung:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
     },
     brand: 'Vesta',
@@ -85,9 +85,9 @@ const products = [
     name: 'VIÊN SỮA MIXMILK HƯƠNG VANI',
     image: '/images/mixmilk2.jpg',
     description: {
-      'Thành phần':
+      thanhPhan:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
-      'Công dụng':
+      congDung:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
     },
     brand: 'Vesta',
@@ -101,9 +101,9 @@ const products = [
     name: 'VITA CARNOISIN (VIÊN NGẬM HOẶC NHAI)',
     image: '/images/vita-carnoisin.jpg',
     description: {
-      'Thành phần':
+      thanhPhan:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
-      'Công dụng':
+      congDung:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
     },
     brand: 'Vesta',
