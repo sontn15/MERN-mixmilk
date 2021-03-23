@@ -11,20 +11,22 @@ const Header = () => {
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='mr-auto'>
               <Nav.Link href='/gioithieu'>Giới thiệu</Nav.Link>
-              <Nav.Link href='/product'>Sản phẩm</Nav.Link>
-              <NavDropdown title='Dropdown' id='basic-nav-dropdown'>
-                <NavDropdown.Item href='#action/3.1'>Action</NavDropdown.Item>
-                <NavDropdown.Item href='#action/3.2'>
-                  Another action
+
+              <NavDropdown title='Sản phẩm' id='basic-nav-dropdown'>
+                <NavDropdown.Item href='#action/3.1'>
+                  Mixmilk chocolate
                 </NavDropdown.Item>
+                <NavDropdown.Item href='#action/3.2'>SCoffee</NavDropdown.Item>
                 <NavDropdown.Item href='#action/3.3'>
-                  Something
+                  Mixmilk dâu
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href='#action/3.4'>
-                  Separated link
+                  Mixmilk vani
                 </NavDropdown.Item>
               </NavDropdown>
+              <Nav.Link href='/product'>Chính sách</Nav.Link>
+              <Nav.Link href='/product'>Liên hệ</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href='/cart'>
