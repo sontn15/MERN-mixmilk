@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Rating from '../components/Rating';
 import { Link } from 'react-router-dom';
 import {
   Container,
@@ -10,10 +11,20 @@ import {
   Button,
   Table,
 } from 'react-bootstrap';
-import products from '../products';
+import axios from 'axios';
 
 const ProductScreen = ({ match }) => {
-  const product = products.find((p) => p._id === match.params.id);
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data } = await axios.get(`/api/products/${match.params.id}`);
+
+      setProduct(data);
+    };
+
+    fetchProduct();
+  }, [match]);
 
   return (
     <Container>
@@ -31,6 +42,12 @@ const ProductScreen = ({ match }) => {
               <h4>{product.name}</h4>
             </ListGroup.Item>
             <ListGroup.Item>
+              <Rating
+                value={product.rating}
+                text={`${product.numReviews} reviews`}
+              />
+            </ListGroup.Item>
+            <ListGroup.Item>
               <h6 className='text-info'>Giá: {product.price}đ</h6>
             </ListGroup.Item>
           </ListGroup>
@@ -38,6 +55,14 @@ const ProductScreen = ({ match }) => {
         <Col md={3}>
           <Card>
             <ListGroup variant='flush'>
+              <ListGroup.Item>
+                <Row>
+                  <Col>Giá: </Col>
+                  <Col>
+                    <strong>${product.price}</strong>
+                  </Col>
+                </Row>
+              </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Tình trạng:</Col>
@@ -60,24 +85,24 @@ const ProductScreen = ({ match }) => {
         </Col>
       </Row>
 
-      <h1 className='mb-3'>Thông tin sản phẩm</h1>
+      {/* <h1 className='mb-3'>Thông tin sản phẩm</h1>
       <h6>Thành phần:</h6>
-      <p>{product.description.thanhPhan}</p>
+      <p>{product.description}</p>
       <h6>Công dụng</h6>
-      <p>{product.description.congDung}</p>
+      <p>{product.description}</p>
 
       <Table striped bordered hover>
         <tbody>
           <tr>
             <td>Thành phần</td>
-            <td>{product.description.thanhPhan}</td>
+            <td>{product.description}</td>
           </tr>
           <tr>
             <td>Công dụng</td>
-            <td>{product.description.congDung}</td>
+            <td>{product.description}</td>
           </tr>
         </tbody>
-      </Table>
+      </Table> */}
     </Container>
   );
 };
