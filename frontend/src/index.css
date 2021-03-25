@@ -31,3 +31,16 @@ main {
 .certificate .content {
   padding-top: 70px;
 }
+
+.card-body h5 {
+  padding: 1rem 0;
+}
+
+/* .card-body a {
+  text-decoration: none;
+} */
+
+.card-text .rating span {
+  margin: 0.1rem;
+  font-size: 14px;
+}
