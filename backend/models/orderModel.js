@@ -26,11 +26,15 @@ const orderSchema = mongoose.Schema(
         type: String,
         required: true,
       },
+      phoneNumber: {
+        type: Number,
+        required: true,
+      },
       city: {
         type: String,
         required: true,
       },
-      city: {
+      district: {
         type: String,
         required: true,
       },
@@ -39,12 +43,12 @@ const orderSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    paymentResult: {
-      id: { type: String },
-      status: { type: String },
-      update_time: { type: String },
-      email_address: { type: String },
-    },
+    // paymentResult: {
+    //   id: { type: String },
+    //   status: { type: String },
+    //   update_time: { type: String },
+    //   email_address: { type: String },
+    // },
     totalPrice: {
       type: Number,
       required: true,
