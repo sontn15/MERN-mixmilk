@@ -44,7 +44,7 @@ const ProductEditScreen = ({ match, history }) => {
 
   return (
     <Container>
-      <Link to='/admin/userlist' className='btn btn-warning my-3'>
+      <Link to='/admin/productlist' className='btn btn-warning my-3'>
         Trở về
       </Link>
       <FormContainer>
