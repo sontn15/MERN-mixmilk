@@ -1,7 +1,9 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import SearchBox from './SearchBox';
 import { logout } from '../actions/userActions';
 
 const Header = () => {
@@ -23,10 +25,10 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='mr-auto'>
+            <Nav className='ml-auto'>
               <Nav.Link href='/gioithieu'>Giới thiệu</Nav.Link>
 
-              <NavDropdown title='Sản phẩm' id='basic-nav-dropdown'>
+              {/* <NavDropdown title='Sản phẩm' id='basic-nav-dropdown'>
                 <NavDropdown.Item href='#action/3.1'>
                   Mixmilk chocolate
                 </NavDropdown.Item>
@@ -38,10 +40,11 @@ const Header = () => {
                 <NavDropdown.Item href='#action/3.4'>
                   Mixmilk vani
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
               <Nav.Link href='/product'>Chính sách</Nav.Link>
               <Nav.Link href='/product'>Liên hệ</Nav.Link>
             </Nav>
+            <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav>
               <LinkContainer to='/cart'>
                 <Nav.Link>

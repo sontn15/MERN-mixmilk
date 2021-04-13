@@ -1,18 +1,33 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
+import {
+  Container,
+  Row,
+  Col,
+  ListGroup,
+  Image,
+  Card,
+  Button,
+} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { getOrderDetails } from '../actions/orderActions';
+import { getOrderDetails, deliverOrder } from '../actions/orderActions';
+import { ORDER_DELIVER_RESET } from '../constants/orderConstants';
 
-const OrderScreen = ({ match }) => {
+const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
 
   const dispatch = useDispatch();
 
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
+
+  const orderDeliver = useSelector((state) => state.orderDeliver);
+  const { loading: loadingDeliver, success: successDeliver } = orderDeliver;
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   if (!loading) {
     order.itemsPrice = order.orderItems.reduce(
@@ -22,8 +37,19 @@ const OrderScreen = ({ match }) => {
   }
 
   useEffect(() => {
-    dispatch(getOrderDetails(orderId));
-  }, [dispatch, orderId]);
+    if (!userInfo) {
+      history.push('/login');
+    }
+
+    if (!order || successDeliver || order._id !== orderId) {
+      dispatch({ type: ORDER_DELIVER_RESET });
+      dispatch(getOrderDetails(orderId));
+    }
+  }, [dispatch, history, orderId, order, successDeliver, userInfo]);
+
+  const deliverHandler = () => {
+    dispatch(deliverOrder(order));
+  };
 
   return (
     <Container>
@@ -59,7 +85,7 @@ const OrderScreen = ({ match }) => {
                   </p>
                   {order.isDelivered ? (
                     <Message variant='success'>
-                      Đã nhận hàng vào: {order.deliveredAt}
+                      Đã gửi hàng vào: {order.deliveredAt}
                     </Message>
                   ) : (
                     <Message variant='danger'>Chưa nhận hàng</Message>
@@ -100,7 +126,9 @@ const OrderScreen = ({ match }) => {
                               />
                             </Col>
                             <Col>
-                              <Link to={`/product/$product`}>{item.name}</Link>
+                              <Link to={`/product/${item.product}`}>
+                                {item.name}
+                              </Link>
                             </Col>
                             <Col md={4}>
                               {item.qty} x {item.price}đ ={' '}
@@ -134,6 +162,19 @@ const OrderScreen = ({ match }) => {
                       </Col>
                     </Row>
                   </ListGroup.Item>
+
+                  {loadingDeliver && <Loader />}
+                  {userInfo && userInfo.isAdmin && !order.isDelivered && (
+                    <ListGroup.Item>
+                      <Button
+                        type='button'
+                        className='btn btn-block'
+                        onClick={deliverHandler}
+                      >
+                        Đánh dấu đã gửi hàng
+                      </Button>
+                    </ListGroup.Item>
+                  )}
                 </ListGroup>
               </Card>
             </Col>

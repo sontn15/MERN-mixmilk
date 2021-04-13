@@ -24,6 +24,7 @@ main {
 .certificate img {
   display: inline-block;
   align-self: center;
+
   width: 50%;
   margin-top: -35px;
 }
@@ -31,6 +32,8 @@ main {
 .certificate .content {
   padding-top: 70px;
 }
+
+/* Card */
 
 .card-body h5 {
   padding: 1rem 0;
@@ -44,6 +47,7 @@ main {
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
+  color: #323232;
 }
 h2 {
   font-size: 1.4rem;
