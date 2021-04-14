@@ -26,8 +26,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ml-auto'>
-              <Nav.Link href='/gioithieu'>Giới thiệu</Nav.Link>
-
+              <LinkContainer to='/gioithieu'>
+                <Nav.Link>Giới thiệu</Nav.Link>
+              </LinkContainer>
               {/* <NavDropdown title='Sản phẩm' id='basic-nav-dropdown'>
                 <NavDropdown.Item href='#action/3.1'>
                   Mixmilk chocolate
@@ -41,8 +42,12 @@ const Header = () => {
                   Mixmilk vani
                 </NavDropdown.Item>
               </NavDropdown> */}
-              <Nav.Link href='/product'>Chính sách</Nav.Link>
-              <Nav.Link href='/product'>Liên hệ</Nav.Link>
+              <LinkContainer to='/chinhsach'>
+                <Nav.Link>Chính sách</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to='/lienhe'>
+                <Nav.Link>Liên hệ</Nav.Link>
+              </LinkContainer>
             </Nav>
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav>
