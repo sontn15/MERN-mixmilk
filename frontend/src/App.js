@@ -20,6 +20,7 @@ import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
+import BlogScreen from './screens/BlogScreen';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           exact
         />
         <Route path='/' component={HomeScreen} exact />
+        <Route path='/blogs' component={BlogScreen} />
         <Route path='/gioithieu' component={AboutScreen} />
         <Route path='/chinhsach' component={PolicyScreen} />
         <Route path='/lienhe' component={ContactScreen} />

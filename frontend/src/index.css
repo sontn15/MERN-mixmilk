@@ -3,6 +3,10 @@ main {
   color: #323232;
 }
 
+ul {
+  list-style: none;
+}
+
 /* SLIDER */
 .carousel-caption h3 {
   font-size: 36px;
