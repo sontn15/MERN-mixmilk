@@ -12,7 +12,7 @@ const AboutScreen = () => {
         lực trong việc xây dựng và phát triển công ty theo những định hướng đã
         đề ra.
       </p>
-      <img src='/images/mixmilk1.jpg' />
+      <img src='/images/mixmilk1.jpg' alt='some info' />
       <p>
         Nổi bật trong đó là việc tập trung phân phối kinh doanh những dòng sản
         phẩm thực phẩm bảo vệ sức khỏe có nguồn gốc xuất xứ rõ ràng, đạt tiêu
@@ -26,7 +26,7 @@ const AboutScreen = () => {
         trợ phát triển răng, xương cho trẻ, giúp giảm nguy cơ loãng xương ở
         người cao tuổi; Hỗ trợ bổ sung chất chống oxy hóa…
       </p>
-      <img src='/images/mixmilk1.jpg' />
+      <img src='/images/mixmilk1.jpg' alt='some info' />
       <p>
         Bên cạnh đó, Mixmilk cũng tiếp tục phối hợp Công ty Cổ phần Phát triển
         Dược Vesta nghiên cứu và cho ra đời các sản phẩm về sức khỏe để đáp ứng

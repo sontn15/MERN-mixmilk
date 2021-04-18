@@ -20,6 +20,10 @@ import UserEditScreen from './screens/UserEditScreen';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
+import BlogScreen from './screens/BlogScreen';
+import BlogDetailScreen from './screens/BlogDetailScreen';
+import BlogListScreen from './screens/BlogListScreen';
+import BlogEditScreen from './screens/BlogEditScreen';
 
 function App() {
   return (
@@ -45,6 +49,13 @@ function App() {
         />
         <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
         <Route path='/admin/orderlist' component={OrderListScreen} />
+        <Route path='/admin/bloglist' component={BlogListScreen} exact />
+        <Route
+          path='/admin/bloglist/:pageNumber'
+          component={BlogListScreen}
+          exact
+        />
+        <Route path='/admin/blog/:id/edit' component={BlogEditScreen} />
         <Route path='/search/:keyword' component={HomeScreen} exact />
         <Route path='/page/:pageNumber' component={HomeScreen} exact />
         <Route
@@ -53,6 +64,9 @@ function App() {
           exact
         />
         <Route path='/' component={HomeScreen} exact />
+        <Route path='/blogs' component={BlogScreen} exact />
+        <Route path='/blogs/:pageNumber' component={BlogScreen} exact />
+        <Route path='/blog/:id' component={BlogDetailScreen} />
         <Route path='/gioithieu' component={AboutScreen} />
         <Route path='/chinhsach' component={PolicyScreen} />
         <Route path='/lienhe' component={ContactScreen} />

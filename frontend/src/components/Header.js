@@ -29,6 +29,9 @@ const Header = () => {
               <LinkContainer to='/gioithieu'>
                 <Nav.Link>Giới thiệu</Nav.Link>
               </LinkContainer>
+              <LinkContainer to='/blogs'>
+                <Nav.Link>Blog Mixmilk</Nav.Link>
+              </LinkContainer>
               {/* <NavDropdown title='Sản phẩm' id='basic-nav-dropdown'>
                 <NavDropdown.Item href='#action/3.1'>
                   Mixmilk chocolate
@@ -82,6 +85,9 @@ const Header = () => {
                   </LinkContainer>
                   <LinkContainer to='/admin/orderlist'>
                     <NavDropdown.Item>Đơn hàng</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/bloglist'>
+                    <NavDropdown.Item>Blog</NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
               )}
