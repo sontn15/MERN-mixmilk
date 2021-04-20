@@ -119,17 +119,17 @@ const PlaceOrderScreen = ({ history }) => {
           <Card>
             <ListGroup variant='flush'>
               <ListGroup.Item>
-                <h2>Order Summary</h2>
+                <h2>Đơn hàng</h2>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Items</Col>
+                  <Col>Sản phẩm</Col>
                   <Col>{cart.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Total</Col>
+                  <Col>Tổng cộng</Col>
                   <Col className='text-danger'>
                     <strong>{cart.totalPrice}</strong>
                   </Col>

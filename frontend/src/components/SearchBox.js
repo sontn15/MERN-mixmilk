@@ -14,13 +14,12 @@ const SearchBox = ({ history }) => {
   };
 
   return (
-    <Form onSubmit={submitHandler} inline>
+    <Form onSubmit={submitHandler} className='search-form'>
       <Form.Control
         type='text'
         name='q'
         onChange={(e) => setKeyword(e.target.value)}
         placeholder='Tìm kiếm sản phẩm'
-        className='mr-sm-2 ml-sm-5'
       ></Form.Control>
       <Button type='submit' variant='secondary' className='p-2'>
         Tìm kiếm

@@ -6,7 +6,7 @@ import Rating from './Rating';
 const Product = ({ product }) => {
   return (
     //   my-3 margin top bot, p-3 padding
-    <Card className='border-primary my-3 p-3 rounded '>
+    <Card className='border-primary my-6 p-3 rounded '>
       <Link className='card-link' to={`/product/${product._id}`}>
         <Card.Img src={product.image} variant='top' />
       </Link>
@@ -25,7 +25,9 @@ const Product = ({ product }) => {
           />
         </Card.Text>
 
-        <Card.Text as='h5'>{product.price}đ</Card.Text>
+        <Card.Text as='h5'>
+          {new Intl.NumberFormat().format(product.price)}đ
+        </Card.Text>
       </Card.Body>
     </Card>
   );

@@ -92,7 +92,9 @@ const ProductScreen = ({ history, match }) => {
                   />
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <h6 className='text-info'>Giá: {product.price}đ</h6>
+                  <h5 className='text-info'>
+                    Giá: {new Intl.NumberFormat().format(product.price)}đ
+                  </h5>
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -103,7 +105,9 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Giá: </Col>
                       <Col>
-                        <strong>{product.price}đ</strong>
+                        <strong>
+                          {new Intl.NumberFormat().format(product.price)}đ
+                        </strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -120,8 +124,8 @@ const ProductScreen = ({ history, match }) => {
                     <ListGroup.Item>
                       <Row>
                         <Col>Số lượng: </Col>
-                        <Col>
-                          <Form.Control
+
+                        {/* <Form.Control
                             as='select'
                             value={qty}
                             onChange={(e) => setQty(e.target.value)}
@@ -133,8 +137,23 @@ const ProductScreen = ({ history, match }) => {
                                 </option>
                               )
                             )}
-                          </Form.Control>
-                        </Col>
+                          </Form.Control> */}
+
+                        <Form.Group className='form-quanity mb-0'>
+                          <Button
+                            onClick={() => setQty(qty - 1)}
+                            disabled={qty === 0}
+                          >
+                            -
+                          </Button>
+                          <Form.Control as='input' value={qty}></Form.Control>
+                          <Button
+                            onClick={() => setQty(qty + 1)}
+                            disabled={qty === product.countInStock}
+                          >
+                            +
+                          </Button>
+                        </Form.Group>
                       </Row>
                     </ListGroup.Item>
                   )}
@@ -207,7 +226,7 @@ const ProductScreen = ({ history, match }) => {
                     </Form>
                   ) : (
                     <Message>
-                      <Link to='/signin'>Đăng nhập </Link>để đánh giá
+                      <Link to='/login'>Đăng nhập </Link>để đánh giá
                     </Message>
                   )}
                 </ListGroup.Item>

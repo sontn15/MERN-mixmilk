@@ -57,7 +57,7 @@ const ShippingScreen = ({ history }) => {
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId='district'>
-          <Form.Label>Tỉnh, Thành phố</Form.Label>
+          <Form.Label>Quận, huyện</Form.Label>
           <Form.Control
             type='text'
             placeholder='Nhập quận, huyện'
