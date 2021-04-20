@@ -2,6 +2,8 @@
 
 Đồ án tốt nghiệp sử dụng MERN stack
 
+Xem thử https://mixmilkapp.herokuapp.com/
+
 ## Các công nghệ sử dụng
 
 1. ReactJs
