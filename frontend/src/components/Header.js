@@ -2,7 +2,15 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import {
+  Container,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Row,
+  Col,
+  Image,
+} from 'react-bootstrap';
 import SearchBox from './SearchBox';
 import { logout } from '../actions/userActions';
 
@@ -18,14 +26,27 @@ const Header = () => {
 
   return (
     <header>
+      <Container>
+        <Row>
+          <LinkContainer to='/' as='a'>
+            <Col lg={3} md={4}>
+              <Image src='/images/logo.png' style={{ width: '100%' }} />
+            </Col>
+          </LinkContainer>
+          <Col lg={6} md={8} className='container-search'>
+            <Route render={({ history }) => <SearchBox history={history} />} />
+          </Col>
+          {/* <Col lg={3} md={4} sm={4}></Col> */}
+        </Row>
+      </Container>
       <Navbar bg='primary' expand='lg' variant='dark' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>Mixmilk</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='ml-auto'>
+          <Navbar.Collapse id='basic-navbar-nav' className='navbar-content'>
+            <Nav>
               <LinkContainer to='/gioithieu'>
                 <Nav.Link>Giới thiệu</Nav.Link>
               </LinkContainer>
@@ -52,7 +73,7 @@ const Header = () => {
                 <Nav.Link>Liên hệ</Nav.Link>
               </LinkContainer>
             </Nav>
-            <Route render={({ history }) => <SearchBox history={history} />} />
+
             <Nav>
               <LinkContainer to='/cart'>
                 <Nav.Link>
