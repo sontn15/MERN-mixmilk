@@ -4,8 +4,10 @@
 
 Xem thử https://mixmilkapp.herokuapp.com/
 
-- Tài khoản admin: admin@example.com - 123456
-- Tài khoản khách: khanh@example.com - 123456
+```
+ Tài khoản admin: admin@example.com - 123456
+ Tài khoản khách: khanh@example.com - 123456
+```
 
 ![screenshot](https://github.com/afshoang/MERN-mixmilk/blob/main/home.png)
 
