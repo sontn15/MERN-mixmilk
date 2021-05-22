@@ -5,13 +5,8 @@ import Order from '../models/orderModel.js';
 // @route POST /api/orders
 // @access Private
 const addOrderItems = asyncHandler(async (req, res) => {
-  const {
-    orderItems,
-    shippingAddress,
-    paymentMethod,
-    itemsPrice,
-    totalPrice,
-  } = req.body;
+  const { orderItems, shippingAddress, paymentMethod, itemsPrice, totalPrice } =
+    req.body;
 
   if (orderItems && orderItems.length === 0) {
     res.status(400);
@@ -59,13 +54,6 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
   if (order) {
     order.isPaid = true;
     order.paidAt = Date.now();
-    // Paypal
-    // order.paymentResult = {
-    //   id: req.body.id,
-    //   status: req.body.status,
-    //   update_time: req.body.update_time,
-    //   email_address: req.body.payer.email_address,
-    // };
 
     const updatedOrder = await order.save();
 
@@ -112,6 +100,15 @@ const getOrders = asyncHandler(async (req, res) => {
 
   res.json(orders);
 });
+
+// @des Get orders by phone numbers
+// @route GET /api/orders/phone
+// @access Private/Admin
+// const getOrders = asyncHandler(async (req, res) => {
+//   const orders = await Order.find({}).populate('user', 'id name');
+
+//   res.json(orders);
+// });
 
 export {
   addOrderItems,

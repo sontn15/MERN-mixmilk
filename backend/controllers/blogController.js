@@ -5,7 +5,7 @@ import Blog from '../models/blogModel.js';
 // @route GET /api/blogs
 // @access Public
 const getBlogs = asyncHandler(async (req, res) => {
-  const pageSize = 1;
+  const pageSize = 4;
   const page = Number(req.query.pageNumber) || 1;
 
   // const blogs = await Blog.find({}).sort({ createdAt: -1 });

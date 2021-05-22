@@ -12,8 +12,15 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { getOrderDetails, deliverOrder } from '../actions/orderActions';
-import { ORDER_DELIVER_RESET } from '../constants/orderConstants';
+import {
+  getOrderDetails,
+  deliverOrder,
+  payOrder,
+} from '../actions/orderActions';
+import {
+  ORDER_DELIVER_RESET,
+  ORDER_PAY_RESET,
+} from '../constants/orderConstants';
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
@@ -25,6 +32,9 @@ const OrderScreen = ({ match, history }) => {
 
   const orderDeliver = useSelector((state) => state.orderDeliver);
   const { loading: loadingDeliver, success: successDeliver } = orderDeliver;
+
+  const orderPay = useSelector((state) => state.orderPay);
+  const { loading: loadingPay, success: successPay } = orderPay;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -41,14 +51,18 @@ const OrderScreen = ({ match, history }) => {
       history.push('/login');
     }
 
-    if (!order || successDeliver || order._id !== orderId) {
+    if (!order || successDeliver || order._id !== orderId || successPay) {
       dispatch({ type: ORDER_DELIVER_RESET });
+      dispatch({ type: ORDER_PAY_RESET });
       dispatch(getOrderDetails(orderId));
     }
-  }, [dispatch, history, orderId, order, successDeliver, userInfo]);
+  }, [dispatch, history, orderId, order, successDeliver, successPay, userInfo]);
 
   const deliverHandler = () => {
     dispatch(deliverOrder(order));
+  };
+  const payHandler = () => {
+    dispatch(payOrder(order));
   };
 
   return (
@@ -85,7 +99,12 @@ const OrderScreen = ({ match, history }) => {
                   </p>
                   {order.isDelivered ? (
                     <Message variant='success'>
-                      Đã gửi hàng vào: {order.deliveredAt}
+                      Đã gửi hàng vào:{' '}
+                      {order.deliveredAt
+                        .slice(0, 10)
+                        .split('-')
+                        .reverse()
+                        .join('-')}
                     </Message>
                   ) : (
                     <Message variant='danger'>Chưa nhận hàng</Message>
@@ -99,7 +118,8 @@ const OrderScreen = ({ match, history }) => {
                   </p>
                   {order.isPaid ? (
                     <Message variant='success'>
-                      Đã thanh toán vào: {order.paidAt}
+                      Đã thanh toán vào:{' '}
+                      {order.paidAt.slice(0, 10).split('-').reverse().join('-')}
                     </Message>
                   ) : (
                     <Message variant='danger'>Chưa thanh toán</Message>
@@ -150,18 +170,31 @@ const OrderScreen = ({ match, history }) => {
                   </ListGroup.Item>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Items</Col>
+                      <Col>Tạm tính</Col>
                       <Col>{order.itemsPrice}</Col>
                     </Row>
                   </ListGroup.Item>
                   <ListGroup.Item>
                     <Row>
-                      <Col>Total</Col>
+                      <Col>Tổng cộng</Col>
                       <Col className='text-danger'>
                         <strong>{order.totalPrice}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
+
+                  {loadingPay && <Loader />}
+                  {userInfo && userInfo.isAdmin && !order.isPaid && (
+                    <ListGroup.Item>
+                      <Button
+                        type='button'
+                        className='btn btn-block'
+                        onClick={payHandler}
+                      >
+                        Đánh dấu thanh toán
+                      </Button>
+                    </ListGroup.Item>
+                  )}
 
                   {loadingDeliver && <Loader />}
                   {userInfo && userInfo.isAdmin && !order.isDelivered && (

@@ -12,7 +12,6 @@ import {
   ListGroup,
   Card,
   Button,
-  Table,
   Form,
 } from 'react-bootstrap';
 import {
@@ -35,10 +34,8 @@ const ProductScreen = ({ history, match }) => {
   const { userInfo } = userLogin;
 
   const productReviewCreate = useSelector((state) => state.productReviewCreate);
-  const {
-    success: successProductReview,
-    error: errorProductReview,
-  } = productReviewCreate;
+  const { success: successProductReview, error: errorProductReview } =
+    productReviewCreate;
 
   useEffect(() => {
     if (successProductReview) {
@@ -91,6 +88,7 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
+                <ListGroup.Item>{product.description}</ListGroup.Item>
                 <ListGroup.Item>
                   <h5 className='text-info'>
                     Giá: {new Intl.NumberFormat().format(product.price)}đ
@@ -125,28 +123,18 @@ const ProductScreen = ({ history, match }) => {
                       <Row>
                         <Col>Số lượng: </Col>
 
-                        {/* <Form.Control
-                            as='select'
-                            value={qty}
-                            onChange={(e) => setQty(e.target.value)}
-                          >
-                            {[...Array(product.countInStock).keys()].map(
-                              (x) => (
-                                <option key={x + 1} value={x + 1}>
-                                  {x + 1}
-                                </option>
-                              )
-                            )}
-                          </Form.Control> */}
-
                         <Form.Group className='form-quanity mb-0'>
                           <Button
                             onClick={() => setQty(qty - 1)}
-                            disabled={qty === 0}
+                            disabled={qty === 1}
                           >
                             -
                           </Button>
-                          <Form.Control as='input' value={qty}></Form.Control>
+                          <Form.Control
+                            as='input'
+                            value={qty}
+                            readOnly
+                          ></Form.Control>
                           <Button
                             onClick={() => setQty(qty + 1)}
                             disabled={qty === product.countInStock}

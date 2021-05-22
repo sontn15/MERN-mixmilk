@@ -3,7 +3,7 @@ const products = [
     name: 'CURCUMIX (DẠNG HỘP CÓ GÓI NHỎ ĐỂ PHA)',
     image: '/images/curcumix.jpg',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
+      'Thực phẩm bảo vệ sức khỏe: Giúp bổ sung chất chống oxy hóa, hỗ trợ tăng cường sức đề kháng, bồi bổ sức khỏe.',
     brand: 'Vesta',
     category: 'Thực phẩm bảo vệ sức khỏe',
     price: 500000,
@@ -15,7 +15,7 @@ const products = [
     name: 'GOLDEN MILK (TÚI VỈ)',
     image: '/images/goldenmilk.jpg',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
+      'Thực phẩm bảo vệ sức khỏe: Giúp bổ sung chất chống oxy hóa, hỗ trợ tăng cường sức đề kháng, bồi bổ sức khỏe.',
     brand: 'Vesta',
     category: 'Thực phẩm bảo vệ sức khỏe',
     price: 150000,
@@ -27,7 +27,7 @@ const products = [
     name: "S'COFFEE CAFE ĐÔNG TRÙNG HẠ THẢO",
     image: '/images/scoffee.jpg',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
+      'Thực phẩm bảo vệ sức khỏe: Giúp bổ sung chất chống oxy hóa, hỗ trợ tăng cường sức đề kháng, bồi bổ sức khỏe.',
     brand: 'Vesta',
     category: 'Thực phẩm bảo vệ sức khỏe',
     price: 500000,
@@ -39,7 +39,7 @@ const products = [
     name: 'VIÊN SỮA MIXMILK HƯƠNG CHOCOLATE',
     image: '/images/mixmilk1.jpg',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
+      'Thực phẩm bảo vệ sức khỏe: Giúp bổ sung chất chống oxy hóa, hỗ trợ tăng cường sức đề kháng, bồi bổ sức khỏe.',
     brand: 'Vesta',
     category: 'Thực phẩm bảo vệ sức khỏe',
     price: 250000,
@@ -51,7 +51,7 @@ const products = [
     name: 'VIÊN SỮA MIXMILK HƯƠNG DÂU',
     image: '/images/mixmilk3.jpg',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
+      'Thực phẩm bảo vệ sức khỏe: Giúp bổ sung chất chống oxy hóa, hỗ trợ tăng cường sức đề kháng, bồi bổ sức khỏe.',
     brand: 'Vesta',
     category: 'Thực phẩm bảo vệ sức khỏe',
     price: 250000,
@@ -63,7 +63,7 @@ const products = [
     name: 'VIÊN SỮA MIXMILK HƯƠNG VANI',
     image: '/images/mixmilk2.jpg',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
+      'Thực phẩm bảo vệ sức khỏe: Giúp bổ sung chất chống oxy hóa, hỗ trợ tăng cường sức đề kháng, bồi bổ sức khỏe.',
     brand: 'Vesta',
     category: 'Thực phẩm bảo vệ sức khỏe',
     price: 250000,
@@ -75,7 +75,7 @@ const products = [
     name: 'VITA CARNOISIN (VIÊN NGẬM HOẶC NHAI)',
     image: '/images/vita-carnoisin.jpg',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, error? Eveniet veritatis necessitatibus excepturi amet.',
+      'Thực phẩm bảo vệ sức khỏe: Giúp bổ sung chất chống oxy hóa, hỗ trợ tăng cường sức đề kháng, bồi bổ sức khỏe.',
     brand: 'Vesta',
     category: 'Thực phẩm bảo vệ sức khỏe',
     price: 500000,

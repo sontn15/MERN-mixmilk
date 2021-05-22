@@ -55,7 +55,7 @@ const ProfileScreen = ({ location, history }) => {
     <Container>
       <Row>
         <Col md={3}>
-          <h2>User Profile</h2>
+          <h2>Thông tin tài khoản</h2>
           {message && <Message variant='danger'>{message}</Message>}
           {error && <Message variant='danger'>{error}</Message>}
           {success && <Message variant='success'>Profile Updated</Message>}
@@ -107,7 +107,7 @@ const ProfileScreen = ({ location, history }) => {
           </Form>
         </Col>
         <Col md={9}>
-          <h2>My orders</h2>
+          <h2>Đơn hàng của bạn</h2>
           {loadingOrders ? (
             <Loader />
           ) : errorOrders ? (
@@ -120,7 +120,7 @@ const ProfileScreen = ({ location, history }) => {
                   <th>NGÀY TẠO</th>
                   <th>TỔNG</th>
                   <th>ĐÃ THANH TOÁN</th>
-                  <th>ĐÃ NHẬN HÀNG</th>
+                  <th>ĐÃ GỬI HÀNG</th>
                   <th></th>
                 </tr>
               </thead>
@@ -128,11 +128,21 @@ const ProfileScreen = ({ location, history }) => {
                 {orders.map((order) => (
                   <tr key={order._id}>
                     <td>{order._id}</td>
-                    <td>{order.createdAt.substring(0, 10)}</td>
+                    <td>
+                      {order.createdAt
+                        .substring(0, 10)
+                        .split('-')
+                        .reverse()
+                        .join('-')}
+                    </td>
                     <td>{order.totalPrice}</td>
                     <td>
                       {order.isPaid ? (
-                        order.paidAt.substring(0, 10)
+                        order.paidAt
+                          .substring(0, 10)
+                          .split('-')
+                          .reverse()
+                          .join('-')
                       ) : (
                         <i
                           className='fas fa-times'
@@ -142,7 +152,11 @@ const ProfileScreen = ({ location, history }) => {
                     </td>
                     <td>
                       {order.isDelivered ? (
-                        order.deliveredAt.substring(0, 10)
+                        order.deliveredAt
+                          .substring(0, 10)
+                          .split('-')
+                          .reverse()
+                          .join('-')
                       ) : (
                         <i
                           className='fas fa-times'
